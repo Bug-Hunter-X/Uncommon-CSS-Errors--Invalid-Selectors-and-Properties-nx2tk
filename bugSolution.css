@@ -1,0 +1,57 @@
+/* Incorrect CSS - Using an invalid property name */
+.my-element {
+  background-color: red;
+  text-align: center;
+  invalid-property: 10px; /* This is wrong */
+}
+
+/* Correct CSS */
+.my-element {
+  background-color: red;
+  text-align: center;
+  padding: 10px; 
+}
+
+/* Incorrect CSS - Using an invalid selector */
+.nonexistent-element {
+  color: blue;
+}
+
+/* Correct CSS - Ensure the selector exists in HTML */
+.my-element {
+  color: blue;
+}
+
+/* Incorrect CSS - Using an invalid property value */
+.my-element {
+  width: invalid-value; /* This is wrong */
+}
+
+/* Correct CSS */
+.my-element {
+  width: 200px;
+}
+
+/* Another example: Incorrect use of hyphens*/
+.my-element {
+font-size: 16px; /*Correct*/
+background-color: #f00;/*Correct*/
+font-size: 12pt; /*Correct*/
+background-image: url('image.png'); /*Correct*/
+background-position-x: 10px;/*Correct*/
+background-position-y: 10px; /*Correct*/
+background-repeat: no-repeat; /*Correct*/
+background-size: 100px 100px;/*Correct*/
+background-attachment: fixed;/*Correct*/
+background-clip: border-box;/*Correct*/
+background-origin: padding-box;/*Correct*/
+background-color: red; /*Correct*/
+my-font-size: 10pt;/*Incorrect-use of hyphen in a custom property*/
+}
+/* Solution: Use a more appropriate naming convention, or use CSS Variables (Custom Properties)*/
+:root {
+  --my-font-size: 10pt;
+}
+.my-element {
+  font-size: var(--my-font-size);
+}
